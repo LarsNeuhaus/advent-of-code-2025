@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,7 +17,7 @@ class DayOneTest {
 
         List<String> rotations = Files.readAllLines(path);
 
-        assertEquals(-1, dayOne.firstPuzzle(rotations));
+        assertEquals(1195, dayOne.firstPuzzle(rotations));
     }
 
     @Test
@@ -29,6 +27,6 @@ class DayOneTest {
 
         List<String> rotations = Files.readAllLines(path);
 
-        assertEquals(-1, dayOne.secondPuzzle(rotations));
+        assertEquals(6770, dayOne.secondPuzzle(rotations));
     }
 }
