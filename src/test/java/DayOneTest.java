@@ -15,10 +15,20 @@ class DayOneTest {
     @Test
     void firstPuzzle() throws IOException {
         DayOne dayOne = new DayOne();
-        Path path = Paths.get("src/main/resources/Input-DayOne-PuzzleOne.txt");
+        Path path = Paths.get("src/main/resources/Input-DayOne.txt");
 
         List<String> rotations = Files.readAllLines(path);
 
         assertEquals(-1, dayOne.firstPuzzle(rotations));
+    }
+
+    @Test
+    void secondPuzzle() throws IOException {
+        DayOne dayOne = new DayOne();
+        Path path = Paths.get("src/main/resources/Input-DayOne.txt");
+
+        List<String> rotations = Files.readAllLines(path);
+
+        assertEquals(-1, dayOne.secondPuzzle(rotations));
     }
 }
