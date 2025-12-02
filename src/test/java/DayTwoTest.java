@@ -16,4 +16,13 @@ public class DayTwoTest {
         String idRanges = Files.readString(path);
         Assertions.assertEquals(30599400849L, dayTwo.firstPuzzle(idRanges));
     }
+
+    @Test
+    public void secondPuzzle() throws IOException {
+        DayTwo dayTwo = new DayTwo();
+        Path path = Paths.get("src/main/resources/Input-DayTwo.txt");
+
+        String idRanges = Files.readString(path);
+        Assertions.assertEquals(4174379265L, dayTwo.secondPuzzle(idRanges));
+    }
 }
