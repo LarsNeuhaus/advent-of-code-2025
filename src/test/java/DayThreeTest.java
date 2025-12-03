@@ -22,4 +22,15 @@ class DayThreeTest {
         Assertions.assertEquals(17155, dayThree.firstPuzzle(joltageRatings));
     }
 
+    @Test
+    public void secondPuzzle() throws IOException {
+        DayThree dayThree = new DayThree();
+
+        Path path = Paths.get("src/main/resources/Input-DayThree.txt");
+
+        List<String> joltageRatings = Files.readAllLines(path);
+
+        Assertions.assertEquals(169685670469164L, dayThree.secondPuzzle(joltageRatings));
+    }
+
 }
