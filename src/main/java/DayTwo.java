@@ -58,7 +58,7 @@ public class DayTwo {
                     }
                     divisor++;
                 }
-                if (!check.isEmpty()) {
+                if (check.contains(true)) {
                     countInvalidIds += i;
                 }
 

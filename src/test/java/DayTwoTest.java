@@ -23,6 +23,6 @@ public class DayTwoTest {
         Path path = Paths.get("src/main/resources/Input-DayTwo.txt");
 
         String idRanges = Files.readString(path);
-        Assertions.assertEquals(4174379265L, dayTwo.secondPuzzle(idRanges));
+        Assertions.assertEquals(46270373595L, dayTwo.secondPuzzle(idRanges));
     }
 }
