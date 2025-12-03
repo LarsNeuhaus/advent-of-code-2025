@@ -15,11 +15,11 @@ class DayThreeTest {
     public void firstPuzzle() throws IOException {
         DayThree dayThree = new DayThree();
 
-        Path path = Paths.get("src/main/resources/Input-DayOne.txt");
+        Path path = Paths.get("src/main/resources/Input-DayThree.txt");
 
-        List<String> rotations = Files.readAllLines(path);
+        List<String> joltageRatings = Files.readAllLines(path);
 
-        Assertions.assertEquals(3, dayThree.firstPuzzle(rotations));
+        Assertions.assertEquals(17155, dayThree.firstPuzzle(joltageRatings));
     }
 
 }
