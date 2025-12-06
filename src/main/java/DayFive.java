@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class DayFive {
 
@@ -29,13 +28,31 @@ public class DayFive {
 
     public long secondPuzzle(List<String> database) {
         List<String> freshIngredientIdRanges = database.subList(0, database.indexOf(""));
-        long totalIngredientIdsToBeFresh = 0;
-        for (String freshIngredientIdRange : freshIngredientIdRanges) {
-            String[] split = freshIngredientIdRange.split("-");
-            long min = Long.parseLong(split[0]);
-            long max = Long.parseLong(split[1]);
+        freshIngredientIdRanges.sort(Comparator.comparingLong(s -> Long.parseLong(s.split("-")[0])));
 
-            totalIngredientIdsToBeFresh += max - min + 1;
+        long totalIngredientIdsToBeFresh = 0;
+        for (int i = 0; i < freshIngredientIdRanges.size() - 1; i++) {
+            String[] split = freshIngredientIdRanges.get(i).split("-");
+            long start = Long.parseLong(split[0]);
+            long end = Long.parseLong(split[1]);
+
+            long nextStart = Long.parseLong(freshIngredientIdRanges.get(i + 1).split("-")[0]);
+            long nextEnd = Long.parseLong(freshIngredientIdRanges.get(i + 1).split("-")[1]);
+
+            if (nextStart <= end) {
+                long newEnd = Math.max(end, nextEnd);
+                freshIngredientIdRanges.set(i, start + "-" + newEnd);
+                freshIngredientIdRanges.remove(i + 1);
+                i--;
+            }
+        }
+
+
+        for (String s : freshIngredientIdRanges) {
+            long start = Long.parseLong(s.split("-")[0]);
+            long end = Long.parseLong(s.split("-")[1]);
+
+            totalIngredientIdsToBeFresh += end - start + 1;
         }
 
 
